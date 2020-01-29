@@ -1,0 +1,39 @@
+# Descrição
+
+Estou com um problema referente a aula "Foto de Perfil" no módulo GoBarber web. O seguinte erro é mostrado no meu terminal:
+```
+    Warning: Maximum update depth exceeded. This can happen when a component calls setState inside
+    useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies
+    changes on every render.
+    	in AvatarInput (at Profile/index.js:22)
+    	in form (created by A)
+    	in A (at Profile/index.js:21)
+```
+
+&nbsp;
+
+# Como reproduzir
+
+Após a implementação do input da foto no unform, a página de Perfil para de responder e sou obrigado a fechar a aba do site.
+
+&nbsp;
+
+# Código
+
+No arquivo Profile/index.js foram adicionados o import do input de arquivo (foto) e o campo desse input no Unform.
+
+```js
+    import  AvatarInput  from  './AvatarInput';
+    ...
+      return (
+        <Container>
+          <Form initialData={profile} onSubmit={handleSubmit}>
+            <AvatarInput name="avatar_id" />
+    		...
+           </Form>
+           ...
+        </Container>
+      );
+```
+
+O arquivo referente ao componente AvatarInput pode ser visto nesse [link](https://github.com/Rocketseat/bootcamp-gostack-09/blob/master/src/pages/Profile/AvatarInput/index.js)
